@@ -1,0 +1,6 @@
+- [] Strengthen the motivation: to me, is more about "Why developers should care about refactoring tests? Does it really matter? Developers don't have time...maybe it's useless to lose time on improve the test code quality..or maybe not?" Then, there is the other more exploratory reason, which is: what type of refactorings developers apply on tests? Arie defined those 14 refactorings to avoid test smells...but what do developers _actually_ do?
+- [] Expand related work
+- [] Improve methodology, the writing is very bad
+- [] RQ1 results: very cool results, we should describe more "why that is happening".
+- [] RQ2: They make a distinction between "improved" and "significantly improved", not sure whether makes sense. Results may indeed change if we consider all of them. Again, maybe try to give an explanation to this fact
+- [] RQ3: I think the graph is wrong (can't blame the guys, it was my idea). So, in the graph we represent the couple test-prod. Currently, there is no distinction between a couple like Low-High and High-Low. Could be interesting to represent this difference somehow..still have to understand what type of graphs can do it! 
