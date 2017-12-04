@@ -1,32 +1,50 @@
-\documentclass{sig-alternate}
+\documentclass[sigconf,review,anonymous]{acmart}
 \usepackage{makecell}
 \usepackage{todonotes}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subcaption}
 
+\setcopyright{rightsretained}
+\acmDOI{}
+\acmISBN{}
+\acmConference[Submitted to MSR '18]{International Conference on Mining Software Repositories}{May 2018}{Gothenburg, Sweden} 
+\acmYear{2018}
+\copyrightyear{2018}
+\acmPrice{00.00}
+
 \begin{document}
 
 \title{The effect of refactoring test code on production code}
-
-\numberofauthors{2} 
-\author{
-    \alignauthor
-    Danny Plenge\\
-    \affaddr{4306082}\\
-    \email{P.C.Plenge@student.tudelft.nl}
-    % 2nd. author
-    \alignauthor
-    Marc Zwart\\
-    \affaddr{4320255}\\
-    \email{M.D.Zwart@student.tudelft.nl}
+\author{Authors omitted for double-blind review}
+\orcid{}
+\affiliation{%
+  \institution{Institute}
+  \streetaddress{Address}
+  \city{City} 
+  \state{Country} 
+  \postcode{}
 }
+\email{Email}
 
+\begin{abstract}
+Refactoring test code is not something developers see in general as an important part of the development process. Despite the fact that this might be true, if the maintainability of the test code gets fully neglected it can have a negative impact on the productivity and throughput of the project. This paper provides an empirical study of test refactors and their impact on the maintainability of the production code. With this research we want to indicate which kind of refactor methods developers apply on their test code, what kind of impact these refactor methods have on the maintainability of the related production code and at last what the correlation is between the maintainability of the test code and the production code.
+\end{abstract}
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003120.10003130</concept_id>
+<concept_desc>Human-centered computing~Collaborative and social computing</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Human-centered computing~Collaborative and social computing}
+\keywords{software testing, automated testing, refactoring}
 \maketitle
 
 %add more inputs for more files
 %\input{content/filename} (omit .tex)
-\input{content/abstract}
 \input{content/introduction}
 \input{content/related-work}
 \input{content/research-methodology}
