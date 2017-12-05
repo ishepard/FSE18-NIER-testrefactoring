@@ -1,7 +1,8 @@
+%!TEX root = ./main.tex
 \section{Results}
 The results of this research are based on the commits of the three repositories: \textit{Sonarqube}, \textit{Hadoop} and \textit{Elasticsearch}.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|}
 \hline
@@ -16,7 +17,7 @@ Total amount of test refactors found (in last 5 years) & 6832 \\ \hline
 \label{table:6}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|}
 \hline
@@ -32,7 +33,7 @@ Total amount of test refactors found (in last 5 years) & 5452 \\ \hline
 \end{table}
 
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|}
 \hline
@@ -54,7 +55,7 @@ The amount of monthly commits are mined over the whole course of the project. Th
 In order to find out what type of refactors developers apply on test code (\textbf{RQ1}), we used refactorminer on multiple repositories to extract all kind of refactors out of the commits. After all the refactors were found, we grouped the refactor methods together and counted them as can be seen in table~\ref{table:9}
 \ifx true false
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -71,7 +72,7 @@ Pull Up Method & 59 & Rename Method & 3481 \\ \hline
 \label{table:9}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -88,7 +89,7 @@ Pull Up Method & 175 & Rename Method & 1363 \\ \hline
 \label{table:10}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -107,7 +108,7 @@ Pull Up Method & 311 & Rename Method & 4370 \\ \hline
 
 \fi
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -124,9 +125,9 @@ Pull Up Method & 545 & Rename Method & 9214 \\ \hline
 \label{table:9}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
  \centering
- \includegraphics[width=\linewidth]{resources/refactorMethods.PNG}
+ \includegraphics[width=\linewidth]{resources/refactorMethods.pdf}
  \caption{Percentages of the refactor methods of all the repositories}
  \label{figure:piechart}
 \end{figure}
@@ -138,7 +139,7 @@ After examining the results it was clear that some refactor methods were used mo
 %-----------------------------------------------------------------------------------------------
 \subsection{RQ2: Does the refactoring of test code affect the maintainability of production code?}\label{maintainability:improved}
 In this section we want to adres the results found that have been collected in an attempt to answer RQ2. Refactor data on test classes has been gathered and their matching production classes were checked every 10 commits after that for 5 versions in total, so up to 50 commits ahead. As mentioned in the explanation of RQ2 we will be looking at refactors on test code that significantly improved the maintainability of that test class. We define a significant improvement as a summed difference in the classes each metric among LOC, NOF, NOM and WMC. An example, a class that went from Medium to Low in terms of LOC, has a difference of 1 in terms of LOC. High to Very Low is a difference of 4, Low to High is a difference of -2. Adding the difference for each metric gives us the summed difference, if this value exceeds 4 we say the improvement is significant.  Among all projects we have found the follwing numbers:
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|l|l|}
         \hline
@@ -153,7 +154,7 @@ In this section we want to adres the results found that have been collected in a
     \label{table:12}
 \end{table}
 We then check the first and last version of the matching production class that was tracked and calculate the difference here as well. Some production files could not be tracked, this can be accounted to rename or deletions of the file causing our code to be unable to find the file.
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|l|l|}
         \hline
@@ -180,28 +181,28 @@ Throughout all the metrics we have analysed in every project we see a strong cor
 The high density in the Very Low category for both test and production classes is a surprising result, it seems that for each of these metrics it holds that where a production class is categorised as low risk, so is the corresponding test class, giving an indication that a correlation is present. However that we do not see this density in the Low/Low, Medium/Medium and High/High categories hints that the correlation doesn't hold in all situations. This can however be led back to the argument presented earlier, that even higher complexity classes can be tested using relatively simple test classes.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{resources/LOC.png}
+    \includegraphics[width=\linewidth]{resources/LOC.pdf}
     \caption{LOC categorization of test-production code class pairs}
     \label{figure:loc}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{resources/NOF.png}
+    \includegraphics[width=\linewidth]{resources/NOF.pdf}
     \caption{NOF categorization of test-production code class pairs}
-    \label{figure:loc}
+    \label{figure:nof}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{resources/NOM.png}
+    \includegraphics[width=\linewidth]{resources/NOM.pdf}
     \caption{NOM categorization of test-production code class pairs}
-    \label{figure:loc}
+    \label{figure:nom}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{resources/WMC.png}
+    \includegraphics[width=\linewidth]{resources/WMC.pdf}
     \caption{WMC categorization of test-production code class pairs}
-    \label{subfigure:loc}
+    \label{subfigure:wmc}
 \end{figure}
 
 

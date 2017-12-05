@@ -1,3 +1,5 @@
+%!TEX root = ./main.tex
+
 \section{Research Methodology}
 In this paper we aim to identify the effects of refactoring test code on production code. In order to do this research, multiple open-source repositories were selected to analyze using a variety of available tools, in the upcoming sections we will elaborate on the chosen datasources, the chosen research tools and the research questions we attempt to answer.
 
@@ -16,7 +18,7 @@ It would generally be relevant to see if there is a direct correlation between t
  This section describes the analysed datasources (ie. github repositories). All of the analysed projects are written in Java and contain an appropriate amount of test code which made them suitable for this research project. The used projects can be found in table~\ref{table:1}.\\
  Sonarqube, Apache Hadoop and Elasticsearch were handpicked because they are repositories with at least more than 17.000 commits. The repositories exists out of multiple projects which are either maven or gradle projects, containing a production and a test directory. This project setup makes it more easier to find production/test pair files, which is very important for this research. All projects have a time span of at least 5 years and have over 150 releases, which means that there is a strong possibility that multiple refactors have been done in order to maintain the code.
  \\
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{l | l | l |l} 
      \hline 
@@ -78,7 +80,7 @@ On first sight one might be tempted to use the maintainability index, however, m
 Research has showed \cite{sjoberg2012questioning} that the most reliable metrics of maintainability are the size of the project and the inverse cohesion. Metrics as \textbf{LOC}, \textbf{NOF} and \textbf{NOM} all give some indication about the size of a class and are thereby more reliable for determining the maintainability. However, in order to take more than only the size of a class into consideration, we also decided to look at the \textbf{WMC}. The \textbf{WMC} metric measures the static complexity of all the methods in a class. It seems logical that the more methods a class contains, the more complex the class will get \cite{li1993object}. The \textbf{LCOM} would also be a reliable source for determining the maintainability, however the developers of \textit{CK} have indicated that the results of this metric might not be so reliable. This is why we have chosen to mainly focus on the size, while also taking the complexity into consideration. \indent
 We decided to come up with our own maintainability analysis method, based on the LOC, NOF, WMC and NOM of a java file. We will categorize these metrics into 4 catagories representing 'risk', higher risk means higher chance of having low maintainability. The categories are: "High", "Medium", "Low" and "Very Low". We base the boundaries of these categories on our own dataset, by taking the 70th, 80th and 90th quantile of the data for each of these metrics out of all the data we have collected. Each quantile represents the threshold of a category, these specific quantiles were also used by \cite{alves2010deriving}, therefore we have adopted them as well.\\This method yields us the following categories:
 
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \label{categories-LOC}
     \begin{tabular}{|l|l|}
@@ -93,7 +95,7 @@ We decided to come up with our own maintainability analysis method, based on the
     \end{tabular}
     \caption{LOC maintainability categories}
 \end{table}
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \label{categories-NOF}
     \begin{tabular}{|l|l|}
@@ -108,7 +110,7 @@ We decided to come up with our own maintainability analysis method, based on the
     \end{tabular}
     \caption{NOF maintainability categories}
 \end{table}
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \label{categories-WMC}
     \begin{tabular}{|l|l|}
@@ -123,7 +125,7 @@ We decided to come up with our own maintainability analysis method, based on the
     \end{tabular}
     \caption{WMC maintainability categories}
 \end{table}
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \label{categories-NOM}
     \begin{tabular}{|l|l|}
