@@ -5,62 +5,26 @@ Automated testing is nowadays considered an essential process for
 improving the quality of software systems~\cite{Bertolino2007,Myers2004}, and it is
 one of the most common techniques for detecting defects in 
 software artifacts~\cite{laitenberger1998studying,van2001refactoring}.
-As part of their programming activity, developers write and maintain test code 
-continuously~\cite{van2001refactoring}. Zaidman~\etal~\cite{Zaidman2008} investigated the
-co-evolution of test and production code, showing that they grow and are modified together.
-
 Several different testing
 practices are currently used by practitioners, such as Test Driven Development
 \cite{erdogmus2010test}, Mocking~\cite{Spadini}, Extreme Programming \cite{lindstrom2004extreme} or
 Acceptance Test-Driven Development \cite{aggarwal2014acceptance}, and many studies on the 
 positive effects of testing practices on production code quality have
 been carried on in the last decade~\cite{laitenberger1998studying,binder1996testing}. 
-Some of these practices,
-e.g. Extreme Programming, involve a variety of different refactoring methods.
+
+As part of their programming activity, developers write and maintain test code 
+continuously~\cite{van2001refactoring}. Zaidman~\etal~\cite{Zaidman2008} investigated the
+co-evolution of test and production code, showing that they grow and are modified together.
 Van Deursen~\etal~\cite{van2001refactoring} described some refactoring methods 
 specifically for test code, such as \textit{Inline Resource}, \textit{Setup External Resource}
-or \textit{Reduce Data}. The aim of these refactorings presented by Van Deursen was
+or \textit{Reduce Data}. The aim of these refactorings methods presented by Van Deursen were
 to overcome a distinct set of bad smells than involves test code, the so called \textit{test smells}.
-However, no studies have studied what type of refactorings developers apply on test
-code
-Our research deepens the knowledge on these test
-refactoring methods by shining light on the impact of refactoring test code on
-production code.
-
-One should always take the related production code into consideration when
-refactoring the test code. Despite the fact that you might make the code more
-readable or maintainable, there is always a chance that the refactor might break
-the tests. Of course not every refactor which is made on the test code is to
-improve the quality of the project, there are also test code refactors which are
-a result of changes which are made in the production code. Nonethless, each
-refactor could have an impact on the test code and researching this impact will
-allow us to determine the value of test code refactoring.
-
-In order to keep the code readable and maintainable, the size of each of the
-classes should be kept to a minimum \cite{baggen2012standardized}. This way it
-is easier for the developer to understand what is happening in the code and when
-a method or class has to be refactored the impact on the code will be less
-significant. Beside the size of a class, the complexity also has an impact on
-the maintainability of the test code. Dealing with these problems can increase
-the quality of the test code and therefor increase the throughput and
-productivity of the development of a project \cite{athanasiou2011constructing}.
-
-Despite the fact that keeping the size and complexity of a class to a minimum
-does have a positive effect on the project overall, in practice these methods
-are not always complied with. When a project becomes bigger it starts to get
-harder to keep it well structured. When the requirements of a project starts to
-differ, code changes have to be applied, however these code changes are often
-the reason why the maintainability or readability of the project starts to
-decrease. This is often because the developers do not realize what kind of
-impact refactoring test code can have on the maintainability of a project.
-
-We decided to look at the way developers refactor their test code and if it does
-have a positive effect on the related production code. By examining the test
-code of multiple projects and evaluating the maintainability we can determine
-which of these refactor methods are used and if they do improve the
-maintainability of the production code. If the results of this research show
-that improving your test code by refactoring bad written code, we might
-stimulate developers to do this and improve the overall test code of a project.
+Even though previous studies showed that developers continuously maintain and refactor test code, 
+no studies have been carried on to understand how developers do it, what type of refactorings they apply the most
+and what is the impact of these refactorings on the production code quality.
+By means of quantitative research, we aim at shining light on these questions, whose answers
+can help understanding current best practices in test refactorings, as well as
+stimulate developers to improve the overall test code quality of their project.
 
 During the evaluation of the multiple open-source projects we found out that
 during the development of a project, the test code does get refactored a lot.
