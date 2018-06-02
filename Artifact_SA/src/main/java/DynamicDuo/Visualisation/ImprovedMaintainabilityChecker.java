@@ -54,6 +54,7 @@ public class ImprovedMaintainabilityChecker {
 	
 
 	private void loadClassPairs() throws IOException {
+		System.out.println("loading class Pairs");
 		IOHandler.readLines(StudyConstants.CSV_Class_Pairs, new LineHandler() {
 
 			@Override
@@ -100,7 +101,7 @@ public class ImprovedMaintainabilityChecker {
 				if(totalDiff > 0) worsened++;
 				if(totalDiff < 0) improved++;
 				if(totalDiff == 0) unaffected++;
-				if(totalDiff < -4) { //this threshold defines what we see as a major improvement
+				if(totalDiff < 0) { //this threshold defines what we see as a major improvement
 					big_improvement++;
 //					System.out.println(cols[cols.length -1]);
 //					System.out.println(cols[8] + " (" + orig_nof.toString() + ")" + " - " + cols[24] + " (" + prev_nof.toString() + ")");

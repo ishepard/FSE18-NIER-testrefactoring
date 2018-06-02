@@ -1,3 +1,7 @@
+*/.idea/*
+Artifact_SA/data/venv/*
+Artifact_SA/data/.idea/*
+
 .metadata/
 repositories/
 Artifact_SA/target/
