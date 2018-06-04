@@ -66,35 +66,30 @@ To find what types of refactorings developers apply the most on test code, we us
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrrrrrr}
 \hline
- & Sonarqube & Hadoop & Elasticsearch & Total \\ \hline
-Rename Method & 3481 & 1363 & 4370 & 9214 \\
-Move Class & 1118 & 261 & 1363 & 2742 \\
-Rename Class & 820 & 555 & 2401 & 3776 \\
-Move Method & 553 & 721 & 1071 & 2345 \\
-Move Attribute & 341 & 395 & 282 & 1018 \\
-Extract Method & 315 & 1690 & 565 & 2570 \\
-Pull Up Attribute & 33 & 152 & 23 & 208 \\
-Extract Superclass & 12 & 46 & 73 & 131 \\
-Push Down Method & 37 & 2 & 298 & 337 \\
-Rename Package & 6 & 0 & 6 & 12 \\
-Push Down Attribute & 3 & 0 & 100 & 103 \\
-Extract Interface & 1 & 3 & 0 & 4 \\
-Inline Method & 53 & 89 & 57 & 199 \\
-Pull Up Method & 59 & 175 & 311 & 545 \\
+ & Sonarqube & Hadoop & Elasticsearch & Total & Percentage \\ \hline
+Rename Method & 3481 & 1363 & 4370 & 9214 & 39.7\% \\
+Rename Class & 820 & 555 & 2401 & 3776 & 16.3\% \\
+Move Class & 1118 & 261 & 1363 & 2742 & 11.8\% \\
+Extract Method & 315 & 1690 & 565 & 2570 & 11.1\% \\
+Move Method & 553 & 721 & 1071 & 2345 & 10.1\% \\
+Move Attribute & 341 & 395 & 282 & 1018 & 4.4\% \\
+Pull Up Method & 59 & 175 & 311 & 545 & 2.3\% \\
+Push Down Method & 37 & 2 & 298 & 337 & 1.5\% \\
+Pull Up Attribute & 33 & 152 & 23 & 208 & 0.9\% \\
+Inline Method & 53 & 89 & 57 & 199 & 0.9\% \\
+Extract Superclass & 12 & 46 & 73 & 131 & 0.5\% \\
+Push Down Attribute & 3 & 0 & 100 & 103 & 0.4\% \\
+Rename Package & 6 & 0 & 6 & 12 & 0\% \\
+Extract Interface & 1 & 3 & 0 & 4 & 0\% \\
 \end{tabular}
 }
 \end{table}
 
-\begin{figure}[!ht]
- \centering
- \includegraphics[width=\columnwidth]{resources/refactorMethods.pdf}
- \caption{Percentages of the refactor methods of all the repositories}
- \label{figure:piechart}
-\end{figure}
+As we can notice, some refactor methods were used more often than others. The most popular refactor method for test code would be \textbf{Rename Method}. The refactor methods \textbf{Rename Class}, \textbf{Move Class} and \textbf{Extract Method} were also often used. These methods are used for improving the names and location of codes, but also for giving the code a more logical structure. Investigating some of these refactorings, we noticed that the majority of these changes were made due to a change in the production code, \eg the production name method changed from \emph{ContainsA()} to \emph{WithinA()}, hence the test method changed from \emph{testContainsA()} to \emph{testWithinA()}. The coupling between the production and test code is a well-known problem for practitioners~\cite{herman,eric}, and this result brings empirical evidence that it is a widely spread problem and it needs more attention in future research, for example by automatically detecting highly coupled classes and offering possible solutions.
 
-As we can notice, some refactor methods were used more often than others. The most popular refactor method for test code would be \textit{Rename Method}. The refactor methods \textit{Rename Class}, \textit{Move Class} and \textit{Extract Method} were also used often. These methods are used for improving the names and location of codes, but also for giving the code a more logical structure. Refactor methods like \textit{Rename Package}, \textit{Extract Interface}, \textit{Extract Superclass}, \textit{Push Down Method} and \textit{Push Down Attribute} were instead barely used. Another result we can notice is that some of the refactor methods were used much more in a project than in the others. For instance, \textit{Extract Method} was used much more in the Hadoop than in Sonarqube or Elasticsearch. We speculate that this might happen because each project has their own "rules of code quality" that developers have to apply, as well as their own ideas about refactoring code (for example, some projects can have more strict rules and force developers to refactor test code).
+Refactor methods like \textbf{Rename Package}, \textbf{Extract Interface}, \textbf{Extract Superclass}, \textbf{Push Down Method} and \textbf{Push Down Attribute} were instead barely used. Another result we can notice is that some of the refactor methods were used much more in a project than in the others. For instance, \textbf{Extract Method} was used much more in the Hadoop than in Sonarqube or Elasticsearch. We speculate that this might happen because each project has their own "rules of code quality" that developers have to apply, as well as their own ideas about refactoring code (for example, some projects can have more strict rules and force developers to refactor test code).
 
-Given our experimental setting, we cannot speculate on the motivations behind the results achieved so far: indeed, our RQ$_1$ meant to be a coarse-grained investigation aimed at understanding what types of refactorings developers apply the most. Thus, in this research question we did not focus on the reasons behind these refactorings, \eg are the test refactored due to a change in the production code? or maybe because developers were close to a new release? Our RQ$_3$ makes a first step in providing additional insights on such a relationship, however further research should better investigate this relationship.
+Given our experimental setting, we cannot know the motivations behind the results achieved so far: indeed, our RQ$_1$ meant to be a coarse-grained investigation aimed at understanding what types of refactorings developers apply the most. Thus, in this research question we did not focus on the reasons behind these refactorings, \eg are the test refactored due to a change in the production code? or maybe because developers were close to a new release? Our RQ$_2$ makes a first step in providing additional insights on such a relationship, however further research should better investigate this relationship.
 
 %In the \textit{Sonarqube} project, the refactor method \textit{Rename Method} seems to be used far more often than in the \textit{Hadoop} project. The same can be said about the refactor method \textit{Extract Method}, which is used far more often in the Hadoop project as in the Sonarqube project. Ofcourse, each project has its own difficulties and thereby their own refactorings. 
 
@@ -134,14 +129,16 @@ Given our experimental setting, we cannot speculate on the motivations behind th
 %-----------------------------------------------------------------------------------------------
 \subsection*{RQ2: What is the correlation between test code maintainability and production code maintainability?}
 \label{maintainability:correlation}
-Using the categories defined in Section~\ref{sec:maint-metric}, we have categorized the risk for each pair Production-Test class for all the metrics. As shown in Table~\ref{table:6}, we mined a total of 177 snapshots: Since plotting all the snapshots would result in too much data, we have chosen to visualise only 5 snapshots (randomly selected) for each project, hence 15 in total. 
+Using the categories defined in Section~\ref{sec:maint-metric}, we have categorized the risk for each pair Production-Test class for all the metrics. As shown in Table~\ref{table:6}, we mined a total of 177 snapshots: Since plotting all the snapshots would result in too much data, we have chosen to visualize only 5 snapshots (randomly selected) for each project, hence 15 in total. 
 
 In Figure~\ref{fig:heat_map} we show the result. On the axis we can find the risk categories: The X-axis shows the category in which the test class is classified, while the Y-axis shows the category of the corresponding production class. 
 
 \subsubsection{Analyzing the results}
-Throughout all the metrics we have analyzed in every project we see a strong correlation in production and test classes both being classified in the Very Low risk category. This correlation is not that present in the other categories, and this holds for each metric. We do however notice a high density in the leftmost column in each plot: This indicates that where production classes are being classified in a variety of categories, the vast majority of test classes is classified in the Very Low risk category. This can be attributed to the general lower complexity of a test class compared to a production class. For example, a highly complex production class can still be tested with a relatively simple test class that verifies if the output of certain functions is as expected.
+Throughout all the metrics we have analyzed in every project, we see a relation in production and test classes both being classified in the Very Low risk category. For each metric, when a production class is categorized as low risk, so is the corresponding test class, giving an indication that a relation is present. 
+This correlation is not present in the other categories (we do not see this density in the "Low/Low", "Medium/Medium" and "High/High"), and this holds for each metric. This is an indication that the majority of test-production class pairs are not complex: it is expected, since the analyzed projects have strict rules on code quality, and they prefer writing simple and short units of code~\footnote{For example, how to contribute to Qt: \url{http://wiki.qt.io/Qt_Contribution_Guidelines}}. 
 
-The high density in the Very Low category for both test and production classes is a surprising result: for each of these metrics it holds that where a production class is categorized as low risk, so is the corresponding test class, giving an indication that a relation is present. However we do not see this density in the "Low/Low", "Medium/Medium" and "High/High" categories: As previously discussed, this can be led back to the argument presented earlier, that even higher complexity classes can be tested using relatively simple test classes.
+Furthermore, we also notice a high density in the leftmost column in each plot: This indicates that where production classes are being classified in a variety of categories, the vast majority of test classes is classified in the Very Low risk category. This means that, even though the complexity of the production class increases, the complexity of its test is still low. 
+This can be attributed to the general lower complexity of a test class compared to a production class: a highly complex production class can still be tested with a relatively simple test class, for example through the usage of mocks~\cite{Spadini}, that hides all the complexity of instantiating a class.
 
 \begin{figure*}
     \centering

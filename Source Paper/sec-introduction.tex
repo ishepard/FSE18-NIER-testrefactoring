@@ -19,15 +19,26 @@ Van Deursen~\etal~\cite{van2001refactoring} described some refactoring methods
 specifically for test code, such as \textit{Inline Resource}, \textit{Setup External Resource}
 or \textit{Reduce Data}. The aim of these refactorings methods presented by Van Deursen were
 to overcome a distinct set of bad smells than involves test code, the so called \textit{test smells}.
-Even though previous studies showed that developers continuously maintain and refactor test code, 
+Even though these studies showed that developers continuously maintain and refactor test code, 
 no studies have been carried on to understand how developers do it, what type of refactorings they apply the most
 and what is the relation between test code and production code maintainability. 
 By means of quantitative research, we aim at shining light on these questions, whose answers
 can help understanding current best practices in test refactorings, as well as
 stimulate developers to improve the overall test code quality of their project.
 
-During the evaluation of the multiple open-source projects we found out that
-during the development of a project, the test code does get refactored a lot.
-However, only a small fraction of these refactors was to actually improve the
-maintainability of the code. In this paper we will explain how we analyzed these
-repositories and which results came out of this evaluation.
+During the evaluation of multiple open-source projects, we found that
+test code does is often refactored, and that \emph{Rename Method}, \emph{Move Class} and \emph{Rename Class} are among the most used types of refactoring applied on test code. Furthermore, we found that 
+even though production classes are being classified in a variety of categories (from ``Very low risk'' to ``High risk''), the vast majority of test classes are classified as ``Very Low'', giving an indication that even complex
+classes are tested by simple tests. 
+These investigations led to the following
+research contributions:
+
+\begin{description}
+
+\item[(1)] A categorization of the most used refactoring types made on test code, based on a quantitative 
+  analysis on three OSS systems (RQ$_1$). The dataset containing the classification of 23,217 refactorings on test code is available in our on-line appendix~\cite{appendix}.
+  
+\item[(2)] An empirical understanding of the relation between test code and production code maintainability, based on a quantitative analysis of 177 snapshots of 3 OSS projects (RQ$_2$). For each snapshot, we collected CK metrics of all the files present in the snapshot. The dataset is available in our on-line appendix~\cite{appendix}.
+
+
+\end{description}
